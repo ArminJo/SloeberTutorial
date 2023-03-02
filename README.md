@@ -78,6 +78,7 @@ Most people have uploaded their first sketch in Slouber in less than 30 minutes 
   - [A Window (e.g. Console) was accidentally deleted, the window arrangement is broken](#a-window-e.g.-console-was-accidentally-deleted-the-window-arrangement-is-broken)
   - [Errors in unknown libraries](#errors-in-unknown-libraries)
   - [Strange errors indicated, F3 does not work, index not complete](#strange-errors-indicated-f3-does-not-work-index-not-complete)
+  - [No build.opt](#no-build-opt)
   - [Keyboard layout changed to English/US](#keyboard-layout-changed-to-englishus)
   - [Error message: invalid argument to --format: avr](#error-message-invalid-argument-to---format-avr)
 - [Software updates](#software-updates)
@@ -556,6 +557,9 @@ Dragging back can be done by simply **clicking on the tab (not on the title of t
 By double clicking on the tab of every window, this window changes to full screen / full window. The next double click reverts this change.
 
 # Errors and Problems
+Before you chase a strange error, it is always recommended to try **Sloeber > Reattach Libraries**,  **right mouse button > Clean Project** and **Index > Rebuild** and to close and open the project or even restart Sloeber.
+Also look to the list of libraries with **Sloeber > Add a library to the selected project** and check, if it corresponds to your requirements.
+
 
 ## A Window (e.g. Console) was accidentally deleted, the window arrangement is broken
 
@@ -568,7 +572,7 @@ Reset window arrangement with **Window \> Perspective \> Reset Perspective**.
 
 If you get errors like
 
-make: \*\*\* \[libraries\FreeRTOS\src\croutine.c.o\] Error 1
+`make: \*\*\* \[libraries\FreeRTOS\src\croutine.c.o\] Error 1`
 
 then check libraries, sometimes there are more libraries than required. In this case, Sloeber thinks you might need the FreeRTOS library for the project.
 
@@ -583,14 +587,28 @@ Run **Index \> Rebuild** or **Index \> Freshen All Files** and the strange behav
 
 ![](./media/image79.png)
 
+## No build.opt
+
+If you get errors like
+
+`ESP8266/core/build.opt: No such file or directory`
+
+then just removing the line `build.opt.flags="@{build.opt.fqfn}"` in the files platform.txt and platform.sloeber.txt and restarting Sloeber will fix it. 
+"Build options" can be specified in the **Compile Options** tab in the Sloeber project settings.
+
+The files can be found at e.g. Sloeber\arduinoPlugin\packages\esp8266\hardware\esp8266\3.1.1\.
+
+
 ## Keyboard layout changed to English/US
 
 Keyboard layout can be (accidentally) changed by **Alt + Shift** to English and back.
 
 ## Error message: invalid argument to --format: avr
 
-You accidentally checked **use alternative size command? (AVR only)  
-Do not check it for any non AVR platform!  
+You accidentally selected `AVR_ALTERNATIVE` for **use alternative size command?**
+
+Do not select it for any non AVR platform!
+
 **<img src="./media/image80.png" style="width:6.3in;height:4.21319in" />
 
 #  Software updates
