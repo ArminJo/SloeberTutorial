@@ -2,7 +2,7 @@
 
 This introduction is copied from: http://eclipse.baeyens.it/learn.shtml
 
-The arduino IDE put the focus on "a low entry level". Honestly with decades of experience in software development I can tell you -hand on hart- that the Arduino IDE is very good designed ... for it's purpose.
+The arduino IDE put the focus on "a low entry level". Honestly with decades of experience in software development I can tell you -hand on heart- that the Arduino IDE is very good designed ... for it's purpose.
 
 But when you start growing and "the low entry level" is no longer your first concern. You start to want a "rich tool", not a "this way it will work always work tool". So a tool that allows you to control more things, and as such does not stop you from breaking things.
 
@@ -25,7 +25,7 @@ Most people have uploaded their first sketch in Slouber in less than 30 minutes 
   - [Eclipse IDE with Sloeber extensions](#eclipse-ide-with-sloeber-extensions)
 - [First Project Blink on Arduino UNO](#first-project-blink-on-arduino-uno)
   - [Create a new project: Blink-test for Arduino UNO](#create-a-new-project-blink-test-for-arduino-uno)
-    - [Suppress sloeber.ini.cpp](#suppress-sloeber.ini.cpp)
+    - [Suppress sloeber.ini.cpp](#suppress-sloeberinicpp)
     - [Add line numbers to the editor](#add-line-numbers-to-the-editor)
     - [Change Compile options and Compile summary format](#change-compile-options-and-compile-summary-format)
     - [Upload to Arduino UNO](#upload-to-arduino-uno)
@@ -34,7 +34,7 @@ Most people have uploaded their first sketch in Slouber in less than 30 minutes 
     - [Where are the compiled results?](#where-are-the-compiled-results)
 - [Discovering the Arduino cores](#discovering-the-arduino-cores)
 - [Manage Debug and Release version in one project (Multiple configurations)](#manage-debug-and-release-version-in-one-project-multiple-configurations)
-  - [Extend Menu with Active Build Configuration and Build Active Configuration buttons.](#extend-menu-with-active-build-configuration-and-build-active-configuration-buttons.)
+  - [Extend Menu with Active Build Configuration and Build Active Configuration buttons.](#extend-menu-with-active-build-configuration-and-build-active-configuration-buttons)
   - [Set indexer settings for multiple configurations](#set-indexer-settings-for-multiple-configurations)
   - [Rename an existing configuration](#rename-an-existing-configuration)
   - [Add Debug configuration for the project](#add-debug-configuration-for-the-project)
@@ -42,7 +42,7 @@ Most people have uploaded their first sketch in Slouber in less than 30 minutes 
 - [Two different sources in the same project](#two-different-sources-in-the-same-project)
   - [Add a new configuration for the new source](#add-a-new-configuration-for-the-new-source)
   - [Assign the sources to the respective configurations](#assign-the-sources-to-the-respective-configurations)
-  - [Choose which configuration to build.](#choose-which-configuration-to-build.)
+  - [Choose which configuration to build](#choose-which-configuration-to-build)
 - [Change platform to ESP32](#change-platform-to-esp32)
   - [Install ESP platform](#install-esp-platform)
     - [Extend Third party index url's](#extend-third-party-index-urls)
@@ -56,14 +56,6 @@ Most people have uploaded their first sketch in Slouber in less than 30 minutes 
   - [Create a launch configuration for external tool](#create-a-launch-configuration-for-external-tool)
 - [Advanced features](#advanced-features)
   - [Advanced Editing shortcuts](#advanced-editing-shortcuts)
-    - [Name completion with Ctrl + Space](#name-completion-with-ctrl-space)
-    - [Creating code blocks with Ctrl + Space](#creating-code-blocks-with-ctrl-space)
-    - [Search definition of a variable/function with F3](#search-definition-of-a-variablefunction-with-f3)
-    - [Search Usage of variable/function with Ctrl + Shift + G](#search-usage-of-variablefunction-with-ctrl-shift-g)
-    - [Rename variable/function/macro at all occurrences with Alt + Shift + R](#rename-variablefunctionmacro-at-all-occurrences-with-alt-shift-r)
-    - [Format source with Ctrl + Shift + F](#format-source-with-ctrl-shift-f)
-    - [Comment/Outcomment with Ctrl + Shift + /](#commentoutcomment-with-ctrl-shift)
-    - [Search (and replace) in Project or complete Workspace with Search \> File …](#search-and-replace-in-project-or-complete-workspace-with-search-file)
   - [Explore the history of your code](#explore-the-history-of-your-code)
   - [Generating Assembler output of your program](#generating-assembler-output-of-your-program)
   - [Synchronize editor window with left tree view](#synchronize-editor-window-with-left-tree-view)
@@ -72,10 +64,10 @@ Most people have uploaded their first sketch in Slouber in less than 30 minutes 
   - [Convert an ino file to a cpp file](#convert-an-ino-file-to-a-cpp-file)
 - [Working sets](#working-sets)
 - [Tips and Tricks](#tips-and-tricks)
-  - [Detach an editor perspective (e.g. Console) window](#detach-an-editor-perspective-e.g.-console-window)
+  - [Detach an editor perspective (e.g. Console) window](#detach-an-editor-perspective-eg-console-window)
   - [Full screen Editing](#full-screen-editing)
 - [Errors and Problems](#errors-and-problems)
-  - [A Window (e.g. Console) was accidentally deleted, the window arrangement is broken](#a-window-e.g.-console-was-accidentally-deleted-the-window-arrangement-is-broken)
+  - [A Window (e.g. Console) was accidentally deleted, the window arrangement is broken](#a-window-eg-console-was-accidentally-deleted-the-window-arrangement-is-broken)
   - [Errors in unknown libraries](#errors-in-unknown-libraries)
   - [Strange errors indicated, F3 does not work, index not complete](#strange-errors-indicated-f3-does-not-work-index-not-complete)
   - [No build.opt](#no-build-opt)
@@ -224,16 +216,21 @@ Save the changes to the current perspective in order to have it persistent even 
 
 ## Set indexer settings for multiple configurations
 
-The index for **active build configu**ration should be enabled. This allows for more advanced usage of configuration, like binding different libraries etc.  
+The index for **active build configuration** should be enabled. This allows for more advanced usage of configuration, like binding different libraries etc.
+
+Open this with **Window > Preferences**.
 <img src="./media/image27.png" style="width:6.30208in;height:7.30208in" alt="2021-01-23 09_47_09-Preferences" />
 
 ## Rename an existing configuration
+
+<img src="./media/Manage_Configuration.png" />
 
 <img src="./media/image28.png" style="width:3.53125in;height:1.94792in" alt="C:\Users\Armin\AppData\Local\Microsoft\Windows\INetCache\Content.Word\2021-01-23 10_00_04-Blink_test_ Manage Configurations.png" />
 
 <img src="./media/image29.png" style="width:3.41714in;height:2.42742in" />
 
 ## Add Debug configuration for the project
+You can open the `Manage Configuration` window also by **Project > Build Configuration > Manage**.
 
 <img src="./media/image30.png" style="width:5.52083in;height:1.25in" alt="2021-01-23 09_58_46-" />
 
@@ -329,8 +326,10 @@ For each source, you must therefore specify all the configurations where this so
 The "same" must be done for the new source file.
 
 ### Choose which configuration to build.
+This can be done in two ways.
 
-![](./media/image43.png)
+![](./media/Choose_Configuration1.png)
+![](./media/Choose_Configuration2.png)
 
 # Change platform to ESP32
 
@@ -449,6 +448,13 @@ Run it from the menu
 
 ## Advanced Editing shortcuts
 
+- Search definition of a variable/function with `F3`
+- Search Usage of variable/function with `Ctrl + Shift + G`
+- Rename variable/function/macro at all occurrences with `Alt + Shift + R`
+- Format source with `Ctrl + Shift + F`
+- Comment/Outcomment with `Ctrl + Shift + /`
+- Search (and replace) in Project or complete Workspace with `Search \> File …`
+
 ### Name completion with Ctrl + Space
 
 Here the completion for "Seria".  
@@ -472,18 +478,6 @@ This results in:
 **for** (**int** var = 0; var \< <u>max</u>; ++var) {
 
 }
-
-### Search definition of a variable/function with F3
-
-### Search Usage of variable/function with Ctrl + Shift + G
-
-### Rename variable/function/macro at all occurrences with Alt + Shift + R
-
-### Format source with Ctrl + Shift + F
-
-### Comment/Outcomment with Ctrl + Shift + /
-
-### Search (and replace) in Project or complete Workspace with Search \> File …
 
 ## Explore the history of your code
 
